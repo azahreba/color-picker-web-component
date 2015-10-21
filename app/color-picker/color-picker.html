@@ -1,9 +1,72 @@
 <template>
   <style>
+    .color-picker {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      max-height: 100%;
+    }
+
+    .color-picker > * {
+      box-sizing: border-box;
+    }
+
+    /*enter*/
+      .enter > * {
+        margin: 2% 0;
+      }
+      .enter, .selected {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
+        flex: 1;
+        text-align: center;
+        margin: 0 5%;
+      }
+      .enter .enter-input {
+        color: #ccc;
+        height: 20px;
+        padding: 10px;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+      }
+      .enter .enter-input:focus {
+        color: #000;
+      }
+
+    /*selected*/
+      .selected > * {
+        margin: 5% 0;
+      }
+      .selected .selected-color {
+        border: 1px solid #000;
+        min-height: 100px;
+        flex: 1;
+      }
+      .selected .selected-hex {
+        text-transform: uppercase;
+      }
 
   </style>
   <content>
-    Hello WC!
+    <main class="color-picker">
+
+      <section class="enter">
+        <label for="_cp_enter_input">Enter a Color:</label>
+        <input type="text"
+               id="_cp_enter_input"
+               class="enter-input"
+               autocomplete="off">
+        <button id="_cp_enter_button">OK</button>
+      </section>
+      <section class="selected">
+        <span>Selected color:</span>
+        <div id="_cp_selected_color" class="selected-color"></div>
+        <span id="_cp_selected-hex" class="selected-hex"></span>
+        <span id="_cp_selected-rgb" class="selected-rgb"></span>
+      </section>
+    </main>
   </content>
 </template>
 <script src="color-picker.js"></script>
