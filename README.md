@@ -4,7 +4,7 @@
 gulp serve
 
 ## Web components:
-- <template>
+- ```<template>```
 - document.registerElement
 - shadow(shady-)DOM
 - html import
